@@ -1,0 +1,18 @@
+房间表：room
+	uuid //  
+	roomid // 房间号
+	base_info // 房间基本信息
+	create_time // 创建时间
+	num_of_turns // 2/30 轮
+	num_player //房间人数
+	
+	
+玩家和房间映射表
+	uuid 
+	rid	 // 房间id
+	uid // 用户 id
+	uicon // 用户 头像
+	uname	// 用户 姓名
+	uscore	// 用户 分数 (用于朋友桌)
+	ugold	// 用户 金币 (用于金币场)
+	

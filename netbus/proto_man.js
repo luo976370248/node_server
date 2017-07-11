@@ -12,9 +12,7 @@ var proto_tools = require("./proto_tools.js");
 var proto_man = {
 	PROTO_JSON: 1,  
 	PROTO_BUF: 2,
-	// 全局的命令号，当我们的用户丢失链接的时候，
-	// 所有的服务都会收到网关转发过来的这个时间这个消息
-	GW_Disconnect: 10000, 
+	
 
 	encode_cmd: encode_cmd,
 	decode_cmd: decode_cmd,

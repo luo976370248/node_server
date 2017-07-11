@@ -2,10 +2,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(Windows) Attach",
-            "type": "cppvsdbg",
-            "request": "attach",
-            "processId": "${command:pickProcess}"
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Hall",
+            "program": "${workspaceRoot/apps/center_server.js}",
+            "cwd": "${workspaceRoot}",
+            "args": [
+                "${workspaceRoot}/app/game_config.js"
+            ]
         }
     ],
     "compounds": []

@@ -39,6 +39,8 @@ function on_session_enter(session, is_ws, is_encrypt) {
 	session.is_connected = true;
 	session.is_encrypt = is_encrypt;
 
+	session.uid = 0; // 用户的UID
+
 	// 扩展session的方法
 	session.send_encoded_cmd = session_send_encoded_cmd;
 	session.send_cmd = session_send_cmd;

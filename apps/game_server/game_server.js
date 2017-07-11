@@ -1,1 +1,1 @@
-console.log("start game_server !!!");
+console.log("game_server !!!");

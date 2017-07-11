@@ -82,9 +82,15 @@ function on_recv_client_cmd(session, cmd_buf) {
 
 // 玩家掉线就走这里
 function on_client_lost_connect(session) {
+	var uid = session.uid;
+	if (uid === 0) {
+		return;
+	} 
+
+	session.uid = 0;
 	// 遍历所有的服务模块通知在这个服务上的这个玩家掉线了
 	for(var key in service_modules) {
-		service_modules[key].on_player_disconnect(key, session);
+		service_modules[key].on_player_disconnect(key, uid);
 	}
 }
 

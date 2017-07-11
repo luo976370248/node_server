@@ -1,20 +1,20 @@
-const util = require('util');
+var util = require('util');
 
 // log level
-const LEVEL = {
+var LEVEL = {
     ALL: Infinity,
     INFO: 3,
     WARN: 2,
     ERROR: 1,
-    NONE: -Infinity,
-}
+    NONE: -Infinity
+};
 
 // log color
-const COLOR = {
+var COLOR = {
     RESET: '\u001b[0m',
     INFO: '\u001b[32m', // green
     WARN: '\u001b[33m', // yellow
-    ERROR: '\u001b[31m', // red
+    ERROR: '\u001b[31m' // red
 }
 
 // global log level

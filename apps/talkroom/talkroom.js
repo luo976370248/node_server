@@ -1,7 +1,7 @@
 var log = require("../../utils/log.js");
 var proto_man = require("../../netbus/proto_man.js");
 require("./talkroom_proto.js");
-var Cmd = require('../Cmd.js');
+var Cmd = require("../Cmd.js");
 
 var STYPE_TALKROOM = 1;
 var TalkCmd = {

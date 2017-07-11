@@ -5,33 +5,44 @@ var game_config = {
 		host: "127.0.0.1",
 		ports: [6080, 6081],
 	},
+
 	center_server: {
-		host: '127.0.0.1',
+		host: "127.0.0.1",
 		port: 6086,
-		stype: [Stype.Auth],
+		stypes: [Stype.Auth],
 	},
 
 	center_database: {
 		host: "127.0.0.1",
 		port: 3306,
-		db_name: "bycw_center",
+		db_name: "user_center",
+
 		uname: "root",
 		upwd: "123456",
 	},
 
+	room_database: {
+		host: "127.0.0.1",
+		port: 3306,
+		db_name: "room_info",
+
+		uname: "root",
+		upwd: "123456",
+	},
+
+	// 代码来生成
 	game_server: {
-		0: {
-			stype: Stype.TalkRoom,
-			host: "127.0.0.1",
-			port: 6084, 
-		},
+		// 0: {
+		// 	stype: Stype.TalkRoom,
+		// 	host: "127.0.0.1",
+		// 	port: 6084, 
+		// },
 
 		1: {
 			stype: Stype.Auth,
 			host: "127.0.0.1",
 			port: 6086,
 		},
-
 	},
 };
 

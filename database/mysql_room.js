@@ -41,9 +41,9 @@ function mysql_exec(sql, callback) {
 	});
 }
 
+function module_create_room(userid, data, callback)  {
+    var sql = "insert into room_info(uuid, room_id, base_info,current_num, total_num,author,room_type)values(%s,%d,%s,%d,%d,%d,%d,%d)";
 
-function get_guest_uinfo_by_ukey(ukey, callback) {
-	var sql = "select uid, unick, usex, uface, uvip, status, is_guest, ugold, uroomCard, udiamond  from uinfo where guest_key = \"%s\" limit 1";
 	var sql_cmd = util.format(sql, ukey);
 
 	mysql_exec(sql_cmd, function(err, sql_ret, fields_desic) {
@@ -53,37 +53,20 @@ function get_guest_uinfo_by_ukey(ukey, callback) {
 		}
 		callback(Respones.OK, sql_ret);
 	});
+};
+
+function module_delete_room(room_id) {
+
 }
 
-function insert_guest_user(unick, uface, usex, ukey, callback) {
-	var sql = "insert into uinfo(`guest_key`, `unick`, `uface`, `usex`, `is_guest`)values(\"%s\", \"%s\", %d, %d, 1)";
-	var sql_cmd = util.format(sql, ukey, unick, uface, usex);
+function module_get_roominfo_by_userid(uid) {
 
-	mysql_exec(sql_cmd, function(err, sql_ret, fields_desic) {
-		if (err) {
-			callback(Respones.SYSTEM_ERR);
-			return;
-		}
-		callback(Respones.OK);
-	});
 }
 
-function edit_profile(uid, unick, usex, callback) {
-	var sql = "update uinfo set unick = \"%s\", usex = %d where uid = %d";
-	var sql_cmd = util.format(sql, unick, usex, uid);
-
-	mysql_exec(sql_cmd, function(err, sql_ret, fields_desic) {
-		if (err) {
-			callback(Respones.SYSTEM_ERR);
-			return;
-		}
-		callback(Respones.OK);
-	});
+function module_get_roominfo_by_roomid(roomid) {
+    
 }
 
 module.exports = {
 	connect: connect_to_center,
-	get_guest_uinfo_by_ukey: get_guest_uinfo_by_ukey, 
-	insert_guest_user: insert_guest_user,
-	edit_profile: edit_profile,
 };
